@@ -12,5 +12,7 @@ func mapUrls() {
 	v1 := router.Group("/api/v1")
 	{
 		v1.GET("/users/:user_id/folders/:folder_id/files/:file_id", controllers.DownloadFiles)
+		v1.GET("/users/:user_id/folders/:folder_id/files", controllers.DownloadFiles)
+		v1.POST("/users/:user_id/folders/:folder_id/files", controllers.UploadFiles)
 	}
 }
